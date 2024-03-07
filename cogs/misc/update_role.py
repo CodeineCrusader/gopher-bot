@@ -28,10 +28,10 @@ class update_role(commands.Cog):
     
     @commands.command(name="update", description="TBA")
     @app_commands.checks.has_permissions(administrator=True)
-    async def update_role(interaction: discord.Interaction) -> None:
+    async def update_role(self, interaction: discord.Interaction, user: discord.Member) -> None:
         return await interaction.response.send_message(content="*This command is not currently finished!*", ephemeral=True)
     
 
-def setup(client: commands.Bot):
-    client.add_cog(update_role(client))
+async def setup(client: commands.Bot):
+    await client.add_cog(update_role(client))
     logger.info(f"cogs.misc.update_role.py Successfully Loaded!")

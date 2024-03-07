@@ -28,9 +28,9 @@ class ban(commands.Cog):
 
     @commands.command(name="ban", description="TBA")
     @app_commands.checks.has_permissions(administrator=True)
-    async def stream_start(interaction: discord.Interaction) -> None:
-        return await interaction.response.send_message(content="*This command is not currently finished!*", ephemeral=True)
+    async def stream_start(self, interaction: discord.Interaction, user: discord.Member) -> None:
+        await interaction.response.send_message(content="*This command is not currently finished!*", ephemeral=True)
 
-def setup(client: commands.Bot):
-    client.add_cog(ban(client))
+async def setup(client: commands.Bot):
+    await client.add_cog(ban(client))
     logger.info(f"cogs.moderation.ban.py Successfully Loaded!")

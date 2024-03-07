@@ -30,15 +30,15 @@ class stream(commands.Cog):
     
     @stream.command(name="start", description="TBA")
     @app_commands.checks.has_permissions(administrator=True)
-    async def stream_start(interaction: discord.Interaction) -> None:
-        return await interaction.response.send_message(content="*This command is not currently finished!*", ephemeral=True)
+    async def stream_start(self, interaction: discord.Interaction) -> None:
+        await interaction.response.send_message(content="*This command is not currently finished!*", ephemeral=True)
     
     
     @stream.command(name="end", description="TBA")
     @app_commands.checks.has_permissions(administrator=True)
-    async def stream_end(interaction: discord.Interaction) -> None:
-        return await interaction.response.send_message(content="*This command is not currently finished!*", ephemeral=True)
+    async def stream_end(self, interaction: discord.Interaction) -> None:
+        await interaction.response.send_message(content="*This command is not currently finished!*", ephemeral=True)
 
-def setup(client: commands.Bot):
-    client.add_cog(stream(client))
+async def setup(client: commands.Bot):
+    await client.add_cog(stream(client))
     logger.info(f"cogs.misc.stream.py Successfully Loaded!")

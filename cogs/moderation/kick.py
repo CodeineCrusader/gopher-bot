@@ -28,9 +28,9 @@ class kick(commands.Cog):
 
     @commands.command(name="kick", description="TBA")
     @app_commands.checks.has_permissions(administrator=True)
-    async def stream_start(interaction: discord.Interaction) -> None:
+    async def stream_start(self, interaction: discord.Interaction, user: discord.Member) -> None:
         return await interaction.response.send_message(content="*This command is not currently finished!*", ephemeral=True)
 
-def setup(client: commands.Bot):
-    client.add_cog(kick(client))
+async def setup(client: commands.Bot):
+    await client.add_cog(kick(client))
     logger.info(f"cogs.moderation.kick.py Successfully Loaded!")

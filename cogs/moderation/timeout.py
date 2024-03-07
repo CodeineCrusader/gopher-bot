@@ -28,9 +28,9 @@ class timeout(commands.Cog):
 
     @commands.command(name="timeout", description="TBA")
     @app_commands.checks.has_permissions(administrator=True)
-    async def stream_start(interaction: discord.Interaction) -> None:
+    async def stream_start(self, interaction: discord.Interaction, user: discord.Member) -> None:
         return await interaction.response.send_message(content="*This command is not currently finished!*", ephemeral=True)
 
-def setup(client: commands.Bot):
-    client.add_cog(timeout(client))
+async def setup(client: commands.Bot):
+    await client.add_cog(timeout(client))
     logger.info(f"cogs.moderation.timeout.py Successfully Loaded!")
