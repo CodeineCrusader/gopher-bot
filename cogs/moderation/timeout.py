@@ -33,4 +33,4 @@ class timeout(commands.Cog):
 
 async def setup(client: commands.Bot):
     await client.add_cog(timeout(client))
-    logger.info(f"cogs.moderation.timeout.py Successfully Loaded!")
+    logger.info(f"cogs.moderation.timeout Successfully Loaded!")

@@ -33,4 +33,4 @@ class softban(commands.Cog):
 
 async def setup(client: commands.Bot):
     await client.add_cog(softban(client))
-    logger.info(f"cogs.moderation.softban.py Successfully Loaded!")
+    logger.info(f"cogs.moderation.softban Successfully Loaded!")

@@ -33,4 +33,4 @@ class kick(commands.Cog):
 
 async def setup(client: commands.Bot):
     await client.add_cog(kick(client))
-    logger.info(f"cogs.moderation.kick.py Successfully Loaded!")
+    logger.info(f"cogs.moderation.kick Successfully Loaded!")

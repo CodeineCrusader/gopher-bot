@@ -41,4 +41,4 @@ class stream(commands.Cog):
 
 async def setup(client: commands.Bot):
     await client.add_cog(stream(client))
-    logger.info(f"cogs.misc.stream.py Successfully Loaded!")
+    logger.info(f"cogs.misc.stream Successfully Loaded!")

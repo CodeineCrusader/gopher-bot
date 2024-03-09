@@ -33,4 +33,4 @@ class ban(commands.Cog):
 
 async def setup(client: commands.Bot):
     await client.add_cog(ban(client))
-    logger.info(f"cogs.moderation.ban.py Successfully Loaded!")
+    logger.info(f"cogs.moderation.ban Successfully Loaded!")

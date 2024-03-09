@@ -34,4 +34,4 @@ class update_role(commands.Cog):
 
 async def setup(client: commands.Bot):
     await client.add_cog(update_role(client))
-    logger.info(f"cogs.misc.update_role.py Successfully Loaded!")
+    logger.info(f"cogs.misc.update_role Successfully Loaded!")
